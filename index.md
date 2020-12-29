@@ -1,6 +1,5 @@
 ---
-title: Helm charts
-description: Kodelib Helm charts
+title: Kodelib Helm charts
 ---
 
 ## Usage
