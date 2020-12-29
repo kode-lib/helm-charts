@@ -13,6 +13,6 @@ helm repo update
 
 Below is a list of links to help you get started with Kubernetes and Helm.
 
-* [Kodelib Helm charts GitHub repository](https://github.com/kode-lib/helm-charts)
+* [Source code for this repository](https://github.com/kode-lib/helm-charts)
 * [Helm documentation](https://helm.sh/docs/intro/quickstart/)
 * [Kubernetes documentation](https://kubernetes.io/docs/home/)
