@@ -1,4 +1,4 @@
-# Kodelib helm charts
+# Kodelib Helm charts
 
 ## Usage
 
