@@ -1,3 +1,8 @@
+---
+title: Helm charts
+description: Kodelib Helm charts
+---
+
 ## Usage
 
     helm repo add kodelib https://helm.kodelib.com
