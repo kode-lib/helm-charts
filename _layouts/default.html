@@ -33,7 +33,7 @@
       {{ content }}
 
       <footer class="site-footer">
-        <span class="site-footer-credits">This page was generated on {{ site.time }}.</span>
+        <span class="site-footer-credits">This page was generated on {{ site.time | date_to_long_string }}.</span>
       </footer>
     </main>
   </body>
