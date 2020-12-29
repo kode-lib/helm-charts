@@ -2,8 +2,6 @@
 title: KodeLib Helm charts
 ---
 
-## Description
-
 ## Usage
 
 ```
