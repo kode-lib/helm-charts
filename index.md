@@ -1,5 +1,5 @@
 ---
-title: Kodelib Helm charts
+title: KodeLib Helm charts
 ---
 
 ## Description
