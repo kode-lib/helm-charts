@@ -1,0 +1,7 @@
+version: "1.0"
+
+jobs:
+  lint:
+    description: Lint all charts
+    commands:
+      - find charts -type f -name Chart.yaml -exec dirname {} \; | xargs helm lint 
