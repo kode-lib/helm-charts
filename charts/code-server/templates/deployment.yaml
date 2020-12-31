@@ -43,6 +43,13 @@ spec:
             httpGet:
               path: /healthz
               port: http
+          env:
+          {{- range $name, $value := .Values.env }}
+            {{- if not (empty $value) }}
+            - name: {{ $name | quote }}
+              value: {{ $value | quote }}
+            {{- end }}
+          {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
