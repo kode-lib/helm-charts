@@ -50,6 +50,9 @@ spec:
               value: {{ $value | quote }}
             {{- end }}
           {{- end }}
+          volumeMounts:
+            - name: workspace
+              mountPath: /opt/workspace
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
@@ -64,3 +67,11 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+      volumes:
+        - name: workspace
+        {{- if .Values.persistence.enabled }}
+          persistentVolumeClaim:
+            claimName: {{ include "code-server.fullname" . }}
+        {{- else }}
+          emptyDir: {}
+        {{- end -}}

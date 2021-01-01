@@ -45,6 +45,12 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
+persistence:
+  enabled: false
+  accessMode: ReadWriteOnce
+  size: 1Gi
+  storageClass:
+
 resources:
   {}
   # limits:
