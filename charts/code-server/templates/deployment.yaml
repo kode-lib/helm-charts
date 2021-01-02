@@ -51,8 +51,8 @@ spec:
             {{- end }}
           {{- end }}
           volumeMounts:
-            - name: workspace
-              mountPath: /opt/workspace
+            - name: data
+              mountPath: /data
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
@@ -68,7 +68,7 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       volumes:
-        - name: workspace
+        - name: data
         {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:
             claimName: {{ include "code-server.fullname" . }}
