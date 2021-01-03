@@ -52,7 +52,7 @@ spec:
           {{- end }}
           volumeMounts:
             - name: data
-              mountPath: /data
+              mountPath: /home/developer
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}

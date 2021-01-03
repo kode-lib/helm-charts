@@ -9,9 +9,11 @@ jobs:
       - kubectx minikube
       - >
         helm upgrade "${NAME}" "${PWD}"
-        --install 
+        --install
+        --set image.pullPolicy=Always
         --set persistence.enabled="true"
         --set persistence.size="1Gi"
+        --set env.PASSWORD=1234567890
 
   test:
     commands:
