@@ -38,23 +38,31 @@ spec:
               mountPath: /home/kodelib
       {{- end }}
       containers:
+        - name: "{{ .Chart.Name }}-sidecar"
+          image: "{{ .Values.sidecar.image.repository }}:{{ .Values.sidecar.image.tag }}"
+          imagePullPolicy: {{ .Values.sidecar.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          env:
+            - name: PROXY_URL
+              value: http://localhost:8080/
+            - name: BASE_PATH
+              value: {{ .Values.sidecar.base_path | default "/" }}
         - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          ports:
-            - name: http
-              containerPort: 8080
-              protocol: TCP
           livenessProbe:
             httpGet:
               path: /healthz
-              port: http
+              port: 8080
           readinessProbe:
             httpGet:
               path: /healthz
-              port: http
+              port: 8080
           env:
           {{- range $name, $value := .Values.env }}
             {{- if not (empty $value) }}
