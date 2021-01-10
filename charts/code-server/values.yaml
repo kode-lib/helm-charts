@@ -36,7 +36,6 @@ sidecar:
     repository: "kodelib/code-server-sidecar"
     pullPolicy: IfNotPresent
     tag: "3.8.0"
-  base_path: /
 
 ingress:
   enabled: false
@@ -73,4 +72,6 @@ tolerations: []
 
 affinity: {}
 
-env: {}
+app:
+  base_path: /
+  env: {}

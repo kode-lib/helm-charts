@@ -49,7 +49,7 @@ spec:
             - name: PROXY_URL
               value: http://localhost:8080/
             - name: BASE_PATH
-              value: {{ .Values.sidecar.base_path | default "/" }}
+              value: {{ .Values.app.base_path | default "/" }}
         - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
@@ -64,7 +64,7 @@ spec:
               path: /healthz
               port: 8080
           env:
-          {{- range $name, $value := .Values.env }}
+          {{- range $name, $value := .Values.app.env }}
             {{- if not (empty $value) }}
             - name: {{ $name | quote }}
               value: {{ $value | quote }}
