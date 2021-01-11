@@ -6,21 +6,21 @@ variables:
 jobs:
   install:
     commands:
-      - kubectx minikube
+      # - kubectx minikube
       - >
         helm upgrade "${NAME}" "${PWD}"
         --install
         --set image.pullPolicy=Always
         --set persistence.enabled="true"
         --set persistence.size="1Gi"
-        --set env.PASSWORD=1234567890
+        --set app.env.PASSWORD=1234567890
 
   test:
     commands:
-      - kubectx minikube
+      # - kubectx minikube
       - helm test "${NAME}"
 
   uninstall:
     commands:
-      - kubectx minikube
+      # - kubectx minikube
       - helm uninstall "${NAME}"
