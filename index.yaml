@@ -3,6 +3,16 @@ entries:
   code-server:
   - apiVersion: v2
     appVersion: 3.8.0
+    created: "2021-01-11T16:57:29.066319937Z"
+    description: A Helm chart for code-server
+    digest: 2f52d31697f649708e093ca7c48815ebc10f56d75569020e0c02bc8146e0981a
+    name: code-server
+    type: application
+    urls:
+    - https://github.com/kode-lib/helm-charts/releases/download/code-server-0.1.8/code-server-0.1.8.tgz
+    version: 0.1.8
+  - apiVersion: v2
+    appVersion: 3.8.0
     created: "2021-01-10T16:40:02.023933484Z"
     description: A Helm chart for code-server
     digest: 727475a239ae237e643c33efb77e73142c1ab5e1b47e9a9d4b71a65064e70445
