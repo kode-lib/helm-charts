@@ -75,3 +75,6 @@ affinity: {}
 app:
   base_path: /
   env: {}
+  args: 
+    - --host=0.0.0.0
+    - --disable-telemetry
