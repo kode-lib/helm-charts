@@ -5,6 +5,7 @@ variables:
 
 jobs:
   install:
+    executor: local
     commands:
       # - kubectx minikube
       - >
@@ -16,11 +17,13 @@ jobs:
         --set app.env.PASSWORD=1234567890
 
   test:
+    executor: local
     commands:
       # - kubectx minikube
       - helm test "${NAME}"
 
   uninstall:
+    executor: local
     commands:
       # - kubectx minikube
       - helm uninstall "${NAME}"

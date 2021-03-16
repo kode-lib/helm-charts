@@ -3,5 +3,18 @@ version: "1.0"
 jobs:
   lint:
     description: Lint all charts
+    executor: local
     commands:
-      - find charts -type f -name Chart.yaml -exec dirname {} \; | xargs helm lint 
+      - find charts -type f -name Chart.yaml -exec dirname {} \; | xargs helm lint
+
+  docs:
+    executor: local
+    commands:
+      - pip3 install frigate
+      - |
+        for CHART in $(find ./charts -type d -maxdepth 1 -mindepth 1); do
+          CHART_NAME=$(basename "${CHART}")
+          echo "Generating documentation for \"${CHART_NAME}\""
+
+          frigate gen "${CHART}" > "${CHART}/README.md"
+        done
