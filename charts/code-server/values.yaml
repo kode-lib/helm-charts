@@ -1,58 +1,58 @@
 image:
-  repository: kodelib/code-server
-  pullPolicy: IfNotPresent
-  tag: ""
+  repository: kodelib/code-server # Docker image repository
+  pullPolicy: IfNotPresent # Kubernetes image pull policy
+  tag: "" # Docker image tag
 
-imagePullSecrets: []
-nameOverride: ""
-fullnameOverride: ""
+imagePullSecrets: [] # Kubernetes docker registry secret
+nameOverride: "" # String to partially override fullname
+fullnameOverride: "" # String to fully override fullname
 
 serviceAccount:
-  create: true
-  annotations: {}
-  name: ""
+  create: true # Enable creation of service account
+  annotations: {} # Additional annotations for the service account
+  name: "" # The name of the service account to use.
 
-podAnnotations: {}
+podAnnotations: {} # Annotations for pods
 
-podSecurityContext: {}
+podSecurityContext: {} # Pod security context
 
-securityContext: {}
+securityContext: {} # Security context
 
 service:
-  type: ClusterIP
-  port: 80
+  type: ClusterIP # Kubernetes Service type
+  port: 80 # Kubernetes Service HTTP port
 
 sidecar:
   image:
-    repository: "kodelib/code-server-sidecar"
-    pullPolicy: IfNotPresent
-    tag: "0.1.0"
+    repository: "kodelib/code-server-sidecar" # Docker image repository for sidecar
+    pullPolicy: IfNotPresent # Kubernetes image pull policy for sidecar
+    tag: "0.1.0" # Docker image tag for sidecar
 
 ingress:
-  enabled: false
-  annotations: {}
+  enabled: false # Enable ingress controller resource
+  annotations: {} # Ingress annotations
   hosts:
     - host: chart-example.local
       paths: []
   tls: []
 
 persistence:
-  enabled: false
-  accessMode: ReadWriteOnce
-  size: 1Gi
-  storageClass:
+  enabled: false # Enable code-server data persistence using PVC
+  accessMode: ReadWriteOnce # PVC Access Mode for code-server data volume
+  size: 1Gi # PVC Storage Request for code-server data volume
+  storageClass: # PVC Storage Class for code-server data volume
 
-resources: {}
+resources: {} # Pod resources
 
-nodeSelector: {}
+nodeSelector: {} # Node labels for pod assignment
 
-tolerations: []
+tolerations: [] # Tolerations for pod assignment
 
-affinity: {}
+affinity: {} # Affinity for pod assignment
 
 app:
-  base_path: /
-  env: {}
-  args: 
+  base_path: / # code-server web application base path
+  env: {} # code-server additional environment variables
+  args: # code-server additional arguments
     - --host=0.0.0.0
     - --disable-telemetry

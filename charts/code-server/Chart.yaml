@@ -4,3 +4,4 @@ description: A Helm chart for code-server
 type: application
 version: 0.3.1
 appVersion: 3.9.1-r1-ubuntu
+long_description:
