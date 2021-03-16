@@ -1,5 +1,10 @@
 # helm-charts
 
+# Status
+
+[![Release Charts](https://github.com/kode-lib/helm-charts/actions/workflows/release.yml/badge.svg)](https://github.com/kode-lib/helm-charts/actions/workflows/release.yml)
+[![Artifact HUB](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/kodelib)](https://artifacthub.io/packages/search?repo=kodelib)
+
 ## Development environment
 
 All the charts are developed and teste locally using minikube, so before everything you need to start minikube on your local machine.

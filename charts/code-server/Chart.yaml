@@ -1,7 +1,18 @@
 apiVersion: v2
 name: code-server
-description: A Helm chart for code-server
+description: Running code-server inside Kubernetes
 type: application
-version: 0.3.2
+version: 0.3.3
 appVersion: 3.9.1-r1-ubuntu
-long_description:
+long_description: |
+
+    ## Installation
+
+    ```
+    helm repo add kodelib https://helm.kodelib.com
+    helm install my-code-server kodelib/code-server
+    ```
+
+    ## Notes
+
+    By default the chart will use the Ubuntu variant of the image, there's also an Alpine variant if you want to run lighter.
