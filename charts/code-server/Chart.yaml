@@ -2,7 +2,7 @@ apiVersion: v2
 name: code-server
 description: Running code-server inside Kubernetes
 type: application
-version: 0.3.4
+version: 0.3.5
 appVersion: 3.9.1-r1-ubuntu
 icon: https://cdn.worldvectorlogo.com/logos/visual-studio-code-1.svg
 long_description: |
