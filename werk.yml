@@ -16,5 +16,5 @@ jobs:
           CHART_NAME=$(basename "${CHART}")
           echo "Generating documentation for \"${CHART_NAME}\""
 
-          frigate gen "${CHART}" > "${CHART}/README.md"
+          frigate gen --no-credits "${CHART}" > "${CHART}/README.md"
         done
