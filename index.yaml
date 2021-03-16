@@ -3,6 +3,16 @@ entries:
   code-server:
   - apiVersion: v2
     appVersion: 3.9.1-r1-ubuntu
+    created: "2021-03-16T15:26:37.61222594Z"
+    description: Running code-server inside Kubernetes
+    digest: 2419c3ebf602d8fc3a11fc5cad68077278f6a4a8d24745b3bca8e37082fc2ac2
+    name: code-server
+    type: application
+    urls:
+    - https://github.com/kode-lib/helm-charts/releases/download/code-server-0.3.3/code-server-0.3.3.tgz
+    version: 0.3.3
+  - apiVersion: v2
+    appVersion: 3.9.1-r1-ubuntu
     created: "2021-03-16T14:21:17.474381632Z"
     description: A Helm chart for code-server
     digest: a37a28f4ef6c1342eee2d958aa6fea970f60566dff3d35e958548efa23f76308
