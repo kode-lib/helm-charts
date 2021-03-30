@@ -24,7 +24,9 @@ jobs:
         run: werk run lint
 
       - name: Generate documentation
-        run: werk run docs
+        run: |
+          export PATH=$PATH:/home/runner/.local/bin
+          werk run docs
 
       - name: Configure Git
         run: |
