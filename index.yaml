@@ -2,6 +2,17 @@ apiVersion: v1
 entries:
   code-server:
   - apiVersion: v2
+    appVersion: 3.9.3-r1-ubuntu
+    created: "2021-04-13T09:38:53.919283925Z"
+    description: Running code-server inside Kubernetes
+    digest: b7c199a4345a27752f85e7e22b73c935fdb1993c22ae7f6537e6eeadbff23dda
+    icon: https://cdn.worldvectorlogo.com/logos/visual-studio-code-1.svg
+    name: code-server
+    type: application
+    urls:
+    - https://github.com/kode-lib/helm-charts/releases/download/code-server-0.3.11/code-server-0.3.11.tgz
+    version: 0.3.11
+  - apiVersion: v2
     appVersion: 3.9.2-r4-ubuntu
     created: "2021-04-03T21:46:49.614306644Z"
     description: Running code-server inside Kubernetes
